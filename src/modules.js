@@ -3,12 +3,21 @@ import { load } from "cheerio";
 
 const getPagination = async (body) => {
     const $ = load(body);
+    const page = $(".pagination ul li.selected a").text();
+    const current = page ? parseInt(page) : null
+    const last = parseInt($(".pagination ul li:last").text());
+
+    const hasNext = current !== null && current < last
+
     const pagination = {
-        current: $(".pagination ul li.selected a").text() ? $(".pagination ul li.selected a").text() : null,
-        last: $(".pagination ul li:last").text()
+        current,
+        last,
+        hasNext
     }
+
     return pagination
 }
+
 
 export const getRecentEpisodes = async (page) => {
     const url = `https://anitaku.to/home.html?page=${page}`
