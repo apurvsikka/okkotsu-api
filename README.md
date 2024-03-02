@@ -1,15 +1,15 @@
-# 📺 Anitaku API
+# 📺 Okkotsu API
 
-<img src="https://i.imgur.com/rxqMH46.png" align="right" height="350vw">
+<img src="https://files.catbox.moe/ch5hpa.png" align="right" height="350vw">
 
-An open source anime streaming provider api with anitaku.to
+An open source anime streaming provider api.
 
-`Anitaku API` allows you to view recent released episodes, popular and current season anime, search for any anime, and stream watch any anime.
+`Okkotsu API` allows you to view recent released episodes, popular and current season anime, search for any anime, and stream watch any anime.
 
 ## Installation
 - Clone the repo
 ```sh
-git clone https://github.com/Kenimarru/anitaku-api.git
+git clone https://github.com/Kenimarru/okkotsu-api.git
 ```
 - Install dependencies
 ```sh
@@ -19,46 +19,17 @@ npm install
 ```sh
 npm start
 ```
-That's it now the server is running on https://localhost:3000
+That's it now the server is running on [`localhost`](https://localhost:3000)
 
 
-## Usage
-Simple api usage to get recent released episodes:
-```js
-fetch("https://anitaku-api.vercel.app/api/recent?page=1")
-   .then((res) => res.json())
-   .then((data) => console.log(data));
-```
-
-`Output`
-
-```json
-{
-    "code": 200,
-    "message": "success",
-    "data": [
-        "pagination": {
-            "current": "1",
-            "last": "5"
-        },
-        "data": [
-            {
-                "id": "undead-unluck-episode-21",
-                "title": "Undead Unluck",
-                "cover": "https://gogocdn.net/cover/undead-unluck-1708403714.png",
-                "episode": "Episode 21"
-            },
-            {...}
-        ]
-    ]
-}
-```
+## Documentation
+You can find the documentation here [`Documentation`](https://github.com/Kenimarru/okkotsu-api/wiki/Documentation)
 
 ## Deployment
 
-You can deploy your own copy fork of the api on vercel
+You can deploy your own instance of the api on vercel from here ⬇️
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/Kenimarru/anitaku-api)
+[![Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/Kenimarru/anitaku-api)
 
 ### Dependencies
 
