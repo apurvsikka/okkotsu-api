@@ -14,7 +14,8 @@ server.use(urlencoded({ extended: true }));
 server.get("/", (req, res) => {
     res.status(200).json({
         code: 200,
-        message: "success"
+        message: "success",
+        docs: "https://github.com/Kenimarru/okkotsu-api/wiki/Documentation"
     });
 });
 
