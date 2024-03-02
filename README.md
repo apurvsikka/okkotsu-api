@@ -29,7 +29,7 @@ You can find the documentation here [`Documentation`](https://github.com/Kenimar
 
 You can deploy your own instance of the api on vercel from here ⬇️
 
-[![Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/Kenimarru/anitaku-api)
+[![Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/Kenimarru/okkotsu-api)
 
 ### Dependencies
 
