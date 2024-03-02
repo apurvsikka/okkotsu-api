@@ -15,6 +15,10 @@ git clone https://github.com/Kenimarru/okkotsu-api.git
 ```sh
 npm install
 ```
+- Remove `.example` from `.env.example` and fill the values
+```
+ANITAKU_URL=
+```
 - Run the server
 ```sh
 npm start
@@ -38,6 +42,7 @@ You can deploy your own instance of the api on vercel from here ⬇️
 - [helmet](https://www.npmjs.com/package/helmet)
 - [cheerio](https://www.npmjs.com/package/cheerio)
 - [axios](https://www.npmjs.com/package/axios)
+- [dotenv](https://www.npmjs.com/package/dotenv)
 - [nodemon](https://www.npmjs.com/package/nodemon)
 
 ## Licence
