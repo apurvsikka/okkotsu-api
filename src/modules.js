@@ -1,5 +1,9 @@
 import axios from "axios";
 import { load } from "cheerio";
+import dotenv from "dotenv";
+dotenv.config();
+
+const base_url = process.env.ANITAKU_URL
 
 const getPagination = async (body) => {
     const $ = load(body);
@@ -20,7 +24,7 @@ const getPagination = async (body) => {
 
 
 export const getRecentEpisodes = async (page) => {
-    const url = `https://anitaku.to/home.html?page=${page}`
+    const url = `${base_url}/home.html?page=${page}`
     const data = []
     const body = (await axios.get(url)).data
     const $ = load(body);
@@ -37,7 +41,23 @@ export const getRecentEpisodes = async (page) => {
 }
 
 export const getPopular = async (page) => {
-    const url = `https://anitaku.to/popular.html?page=${page}`
+    const url = `${base_url}/popular.html?page=${page}`
+    const data = []
+    const body = (await axios.get(url)).data
+    const $ = load(body);
+    $(".last_episodes ul li").each((index, element) => {
+        const item = {
+            id: $(element).find("p.name a").attr("href").slice(10),
+            title: $(element).find(".name a").text(),
+            cover: $(element).find(".img img").attr("src")
+        }
+        data.push(item);
+    });
+    return { pagination: await getPagination(body), data }
+}
+
+export const getThisSeason = async (page) => {
+    const url = `${base_url}/new-season.html?page=${page}`
     const data = []
     const body = (await axios.get(url)).data
     const $ = load(body);
