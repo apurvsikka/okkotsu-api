@@ -23,10 +23,42 @@ That's it now the server is running on https://localhost:3000
 
 
 ## Usage
-`Coming Soon`
+Simple api usage to get recent released episodes:
+```js
+fetch("https://anitaku-api.vercel.app/api/recent?page=1")
+   .then((res) => res.json())
+   .then((data) => console.log(data));
+```
+
+`Output`
+
+```json
+{
+    "code": 200,
+    "message": "success",
+    "data": [
+        "pagination": {
+            "current": "1",
+            "last": "5"
+        },
+        "data": [
+            {
+                "id": "undead-unluck-episode-21",
+                "title": "Undead Unluck",
+                "cover": "https://gogocdn.net/cover/undead-unluck-1708403714.pngImage preview",
+                "episode": "Episode 21"
+            },
+            {...}
+        ]
+    ]
+}
+```
 
 ## Deployment
-`Coming Soon`
+
+You can deploy your own copy fork of the api on vercel
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/Kenimarru/anitaku-api)
 
 ### Dependencies
 
