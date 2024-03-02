@@ -45,7 +45,7 @@ fetch("https://anitaku-api.vercel.app/api/recent?page=1")
             {
                 "id": "undead-unluck-episode-21",
                 "title": "Undead Unluck",
-                "cover": "https://gogocdn.net/cover/undead-unluck-1708403714.pngImage preview",
+                "cover": "https://gogocdn.net/cover/undead-unluck-1708403714.png",
                 "episode": "Episode 21"
             },
             {...}
