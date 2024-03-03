@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { getRecentEpisodes, getPopular, getThisSeason } from "./modules.js";
+import { getRecentEpisodes, getPopular, getThisSeason, getMovies } from "./modules.js";
 export const router = Router();
 
 router.get("/recent", async (req, res) => {
@@ -40,6 +40,22 @@ router.get("/season", async (req, res) => {
             code: 200,
             message: "success",
             data: await getThisSeason(req.query.page)
+        });
+    } catch (error) {
+        res.status(500).json({
+            code: 500,
+            type: error.name,
+            message: error.message
+        });
+    }
+});
+
+router.get("/movies", async (req, res) => {
+    try {
+        res.status(200).json({
+            code: 200,
+            message: "success",
+            data: await getMovies(req.query.page)
         });
     } catch (error) {
         res.status(500).json({
